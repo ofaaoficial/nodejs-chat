@@ -3,6 +3,9 @@ import express, {static as st} from 'express';
 import indexRoutes from './router/index.router';
 import exphbs from 'express-handlebars';
 import path from 'path';
+import connect from './config/database';
+
+connect();
 
 const app = express();
 app.set('port', process.env.PORT || 2323);
