@@ -1,16 +1,16 @@
 import '@babel/polyfill';
-import express from 'express';
+import express, {static as st} from 'express';
 import indexRoutes from './router/index.router';
 import exphbs from 'express-handlebars';
 import path from 'path';
 
 const app = express();
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 2323);
 
 app.use(indexRoutes);
 app.set('views', path.join(__dirname, 'views'));
 
-console.log();
+app.use(st(path.join(__dirname, 'public')));
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
