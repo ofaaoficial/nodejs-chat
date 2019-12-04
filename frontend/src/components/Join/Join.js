@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 
+import './Join.css';
+
 const Join = () => {
     //Hooks of reactjs
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
 
     return (
-        <section>
+        <section className="join-form">
             <h1>Join</h1>
             <article><
                 input type="text" onChange={(event) => setName(event.target.value)} placeholder="Name"/>
