@@ -12,7 +12,12 @@ const addUser = ({id, name, room}) => {
 
     if(existingUser) return { error: "Username is taken" };
 
-    users.push({id, name, room});
+    const user = {id, name, room};
+    users.push(user);
+
+    return {
+        user
+    }
 };
 
 const removeUser = id => {
@@ -27,9 +32,9 @@ const getUser = id => users.find(user => user.id === id);
 
 const getUsersInRoom = room => users.filter(user => user.room === room);
 
-export default {
-    removeUser,
-    addUser,
+export {
     getUser,
     getUsersInRoom,
+    removeUser,
+    addUser
 };
