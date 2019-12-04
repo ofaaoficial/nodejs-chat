@@ -12,6 +12,14 @@ app.set('port', process.env.PORT || 5000);
 
 app.use(indexRouter);
 
+io.on('connection', socket => {
+    console.log('connected');
+
+    socket.on('disconnected', () => {
+        console.log('disconnected');
+    })
+});
+
 async function main(){
     await server.listen(app.get('port'));
     console.log(`Server has started on http://localhost:${app.get('port')}/`);
