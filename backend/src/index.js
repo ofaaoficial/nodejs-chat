@@ -4,10 +4,17 @@ import indexRoutes from './router/index.router';
 import exphbs from 'express-handlebars';
 import path from 'path';
 import connect from './config/database';
+import http from 'http';
+import socket from 'socket.io';
 
 connect();
 
 const app = express();
+const server = http.createServer(app);
+const io = socket(server);
+require('./config/socket.io')(io);
+
+
 app.set('port', process.env.PORT || 2323);
 
 app.use(indexRoutes);
@@ -25,7 +32,7 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs');
 
 async function main(){
-    await app.listen(app.get('port'));
+    await server.listen(app.get('port'));
     console.log(`Server running in http://localhost:${app.get('port')}/`);
 }
 
