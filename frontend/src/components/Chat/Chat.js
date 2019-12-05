@@ -3,6 +3,7 @@ import queryString from 'query-string';
 import io from 'socket.io-client';
 import InfoBar from "../InfoBar/InfoBar";
 import Input from '../Input/Input';
+import Messages from '../Messages/Messages';
 
 let socket;
 
@@ -46,12 +47,13 @@ const Chat = ({location}) => {
             socket.emit('sendMessage', message, () => setMessage(''));
     };
 
-    console.log(message, messages);
-
     return (
         <section>
             <h1>Chat</h1>
             <InfoBar room={room}/>
+            <Messages
+                messages={messages}
+                name={name}/>
             <Input 
                 message={message} 
                 setMessage={setMessage} 

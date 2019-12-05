@@ -36,5 +36,6 @@ export {
     getUser,
     getUsersInRoom,
     removeUser,
-    addUser
+    addUser,
+    users
 };

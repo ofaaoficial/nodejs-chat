@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-import {addUser, removeUser, getUser, getUsersInRoom} from './config/Users';
+import {addUser, removeUser, getUser, getUsersInRoom, users} from './config/Users';
 
 app.set('port', process.env.PORT || 5000);
 
