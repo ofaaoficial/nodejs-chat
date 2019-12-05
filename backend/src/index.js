@@ -3,6 +3,7 @@ import express from 'express';
 import socketio from 'socket.io';
 import http from 'http';
 import indexRouter from './router/index.router';
+import cors from 'cors';
 
 const app = express();
 const server = http.createServer(app);
@@ -13,6 +14,7 @@ import {addUser, removeUser, getUser, getUsersInRoom, users} from './config/User
 app.set('port', process.env.PORT || 5000);
 
 app.use(indexRouter);
+app.use(cors());
 
 io.on('connection', socket => {
     console.log('connected');
@@ -35,6 +37,11 @@ io.on('connection', socket => {
 
         socket.join(user.room);
 
+        io.to(user.room).emit('roomData', {
+            room: user.room,
+            users: getUsersInRoom(user.room)
+        });
+
         callback();
     });
 
@@ -46,10 +53,22 @@ io.on('connection', socket => {
             text: message
         });
 
+        io.to(user.room).emit('roomData', {
+            room: user.room,
+            users: getUsersInRoom(user.room)
+        });
+
         callback();
     });
 
     socket.on('disconnect', () => {
+        const user = removeUser(socket.id);
+
+        if(user)
+            io.to(user.room).emit('message',{
+                user: 'admin',
+                text: `${user.name} has left.`
+            });
         console.log('User disconnected');
     })
 });

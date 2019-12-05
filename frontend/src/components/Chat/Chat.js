@@ -58,6 +58,8 @@ const Chat = ({location}) => {
                 message={message} 
                 setMessage={setMessage} 
                 sendMessage={sendMessage}/>
+
+                {/*<TextContainer users={users}/>*/}
         </section>
     )
 };
