@@ -1,0 +1,66 @@
+/**
+    Reset styles
+ */
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: .4s ease all;
+    word-break: break-word;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#root{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/**
+    Helpers
+ */
+
+.container{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.form-control{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #b3b3b3;
+    border-bottom: 2px solid #2b82bd;
+}
+
+.form-group{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.btn-green{
+    background-color: #2bbd8b;
+    color: #fff;
+}
+
+.btn-green:hover{
+    background-color: #299061;
+}
