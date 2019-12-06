@@ -31,7 +31,7 @@ const Join = () => {
                 onClick={event => (!name || !room) ? event.preventDefault() : null}
                 to={`/chat?name=${name}&room=${room}`}>
                 <button
-                    className="btn btn-green"
+                    className="btn btn-send"
                     type="submit">
                     Sign In
                 </button>

@@ -2,6 +2,9 @@
     background: #fff;
     width: 400px;
     padding: 40px 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 
 .join-form h1{
