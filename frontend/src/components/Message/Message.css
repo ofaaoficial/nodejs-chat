@@ -1,0 +1,28 @@
+.message{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #ececec;
+    border-top-left-radius: 0;
+    margin-bottom: 20px;
+    width: 250px;
+    position: relative;
+}
+
+.message-username{
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    color: #737373;
+    transform: translateY(-50%);
+}
+
+.message.send p {
+    color: #fff;
+}
+
+.message.send{
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 20px;
+    margin-left: auto;
+    background: #2b82bd;
+}

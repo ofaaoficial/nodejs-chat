@@ -15,19 +15,16 @@ const Message = ({message: {user, text}, name}) => {
     return (
         isSendByCurrentUser
             ? (
-                <section>
+                <section className="message send">
                     <p>{ReactEmoji.emojify(text)}</p>
-                    <span>me</span>
                 </section>
             )
             : (
-                <section>
-                    <p>{trimmedName}</p>
+                <section className="message receive">
+                    <p className="message-username">{trimmedName}</p>
                     <p>{ReactEmoji.emojify(text)}</p>
-                    <span>other</span>
                 </section>
             )
-
     )
 };
 
