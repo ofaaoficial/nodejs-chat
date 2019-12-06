@@ -19,7 +19,7 @@
 body{
     width: 100%;
     overflow-x: hidden;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.46);
 }
 
 #root{
@@ -39,9 +39,16 @@ body{
     padding-right: 50px;
 }
 
+.w-30{
+    width: 30%;
+}
+
+/**
+    Form styles
+ */
 .form-control{
     width: 100%;
-    padding: 8px 12px;
+    padding: 15px 18px;
     border: 1px solid #b3b3b3;
     border-bottom: 2px solid #2b82bd;
 }
@@ -52,15 +59,20 @@ body{
 }
 
 .btn{
-    padding: 8px 12px;
+    padding: 15px 20px;
     cursor: pointer;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 20px;
 }
 
-.btn-green{
-    background-color: #2bbd8b;
+.btn-send{
+    background-color: #225a83;
     color: #fff;
 }
 
-.btn-green:hover{
-    background-color: #299061;
+.btn-send:hover{
+    background-color: #14344e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 5px #00000057;
 }
