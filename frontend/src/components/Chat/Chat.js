@@ -5,6 +5,8 @@ import InfoBar from "../InfoBar/InfoBar";
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 
+import './Chat.css';
+
 let socket;
 
 const Chat = ({location}) => {
@@ -48,8 +50,7 @@ const Chat = ({location}) => {
     };
 
     return (
-        <section>
-            <h1>Chat</h1>
+        <section className="chat">
             <InfoBar room={room}/>
             <Messages
                 messages={messages}
