@@ -1,23 +1,30 @@
-import React from 'react';
-import ScrollTobottom from 'react-scroll-to-bottom';
+import React, {useEffect, useRef} from 'react';
 import Message from "../Message/Message";
 
 import './Messages.css';
 
 const Messages = ({messages, name}) => {
 
+    const messagesEndRef = useRef(null);
+
+    const scrollToBottom = () => {
+        messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+    };
+
+    useEffect(scrollToBottom, [messages]);
     return (
-        <ScrollTobottom>
+            <section className="list-messages">
             {
                 messages.map((message, i) =>
-                    <section key={i}>
                         <Message
                             message={message}
-                            name={name}/>
-                    </section>
+                            name={name}
+                            key={i}
+                        />
                 )
             }
-        </ScrollTobottom>
+            <article ref={messagesEndRef}/>
+            </section>
     )
 };
 
