@@ -1,3 +1,5 @@
 export async function index(req, res){
-    res.send('running');
+    res.json({
+        message: "Application is running"
+    });
 }
