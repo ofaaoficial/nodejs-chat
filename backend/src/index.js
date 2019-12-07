@@ -27,12 +27,12 @@ io.on('connection', socket => {
 
         socket.emit('message', {
             user: 'admin',
-            text: `Welcome to the room ${user.name}`
+            text: `Bienvenido a la sala ${user.name}!`
         });
 
         socket.broadcast.to(user.room).emit('message', {
             user: 'admin',
-            text: `${user.name} has joined!`
+            text: `${user.name} ingreso a la sala!`
         });
 
         socket.join(user.room);
@@ -67,9 +67,9 @@ io.on('connection', socket => {
         if(user)
             io.to(user.room).emit('message',{
                 user: 'admin',
-                text: `${user.name} has left.`
+                text: `${user.name} ha salido.`
             });
-        console.log('User disconnected');
+        console.log('Un usuario se desconecto.');
     })
 });
 
