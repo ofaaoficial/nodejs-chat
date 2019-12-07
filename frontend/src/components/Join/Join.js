@@ -10,12 +10,12 @@ const Join = () => {
 
     return (
         <section className="join-form">
-            <h1>Join</h1>
+            <h1>Datos de acceso</h1>
             <article className="form-group">
                 <input
                     type="text"
                     onChange={(event) => setName(event.target.value)}
-                    placeholder="Name"
+                    placeholder="Nombre"
                     className="form-control"
                 />
             </article>
@@ -23,7 +23,7 @@ const Join = () => {
                 <input
                     type="text"
                     onChange={(event) => setRoom(event.target.value)}
-                    placeholder="Room"
+                    placeholder="Sala"
                     className="form-control"
                 />
             </article>
@@ -33,7 +33,7 @@ const Join = () => {
                 <button
                     className="btn btn-send"
                     type="submit">
-                    Sign In
+                    Ingresar
                 </button>
             </Link>
         </section>
