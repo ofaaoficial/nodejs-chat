@@ -1,0 +1,20 @@
+.room-information{
+    position: absolute;
+    top: 0;
+    left: -343px;
+    background: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.room-information h2{
+    background-color: #2b82bd;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.room-information ul{
+    margin: 20px;
+    list-style: none;
+}
