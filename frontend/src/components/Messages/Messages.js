@@ -1,19 +1,13 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import Message from "../Message/Message";
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 import './Messages.css';
 
 const Messages = ({messages, name}) => {
 
-    const messagesEndRef = useRef(null);
-
-    const scrollToBottom = () => {
-        messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
-    };
-
-    useEffect(scrollToBottom, [messages]);
     return (
-            <section className="list-messages">
+            <ScrollToBottom className="list-messages" followButtonClassName="list-messages-follow-button">
             {
                 messages.map((message, i) =>
                         <Message
@@ -23,8 +17,7 @@ const Messages = ({messages, name}) => {
                         />
                 )
             }
-            <article ref={messagesEndRef}/>
-            </section>
+            </ScrollToBottom>
     )
 };
 
