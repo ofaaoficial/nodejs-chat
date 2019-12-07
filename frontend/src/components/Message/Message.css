@@ -4,8 +4,9 @@
     background-color: #ececec;
     border-top-left-radius: 0;
     margin-bottom: 20px;
-    width: 250px;
     position: relative;
+    margin-right: 10px;
+    max-width: 80%;
 }
 
 .message-username{

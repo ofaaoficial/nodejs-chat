@@ -4,7 +4,7 @@ import './Message.css';
 
 import ReactEmoji from 'react-emoji';
 
-const Message = ({message: {user, text}, name}) => {
+const Message = ({message: {text, user}, name}) => {
     let isSendByCurrentUser = false;
 
     const trimmedName = name.trim().toLowerCase();
@@ -21,7 +21,7 @@ const Message = ({message: {user, text}, name}) => {
             )
             : (
                 <section className="message receive">
-                    <p className="message-username">{trimmedName}</p>
+                    <p className="message-username">{user}</p>
                     <p>{ReactEmoji.emojify(text)}</p>
                 </section>
             )
